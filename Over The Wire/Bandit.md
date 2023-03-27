@@ -297,5 +297,46 @@ There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo
         cat readme.md
 
 ### Level 30 -> 31
+There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo. The password for the user bandit30-git is the same as for the user bandit30. | Clone the repository and find the password for the next level.
 
+      * mkdir /tmp/hacker
+        cd /tmp/hacker
+        git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+        and paste the same password of the current level
+        ls
+        cd repo
+        ls
+        cat readme.md 
+        git show
+        git tag
+        git show secret
 
+### Level 31 -> 32
+There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo. The password for the user bandit31-git is the same as for the user bandit31. | Clone the repository and find the password for the next level.
+
+      * mkdir /tmp/hacker
+        cd /tmp/hacker
+        git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+        and paste the same password of the current level
+        ls
+        cd repo
+        ls
+        cat readme.md 
+        ls -al
+        cat .git ignore
+        git branch -a
+        git push origin master
+        and paste the same password of the current level
+
+### Level 32 -> 33
+After all this git stuff its time for another escape. Good luck!
+
+      * $0
+        id
+        cat /etc/bandit_pass/bandit33
+
+### Level 33 -> 34 
+At this moment, level 34 does not exist yet.
+
+        * ls
+        cat readme.txt
